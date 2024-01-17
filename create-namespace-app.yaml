@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: create-namespace-app
+  namespace: argocd  # Namespace where Argo CD is installed
+spec:
+  source:
+    repoURL: https://github.com/Fokitoq/testnamespaceargo  # Replace with your Git repository URL
+    path: create-namespace-app.yaml  # Replace with the path to your namespace manifest
+    targetRevision: main  # Replace with the branch, tag, or commit hash
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: your-namespace  # Namespace where the new namespace will be created
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
