@@ -6,7 +6,7 @@ metadata:
 spec:
   source:
     repoURL: https://github.com/Fokitoq/testnamespaceargo  # Replace with your Git repository URL
-    path: create-namespace-app.yaml  # Replace with the path to your namespace manifest
+    path: namespace.yaml  # Replace with the path to your namespace manifest
     targetRevision: main  # Replace with the branch, tag, or commit hash
   destination:
     server: https://kubernetes.default.svc
